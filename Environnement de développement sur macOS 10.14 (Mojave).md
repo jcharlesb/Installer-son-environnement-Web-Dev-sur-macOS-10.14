@@ -246,6 +246,7 @@ brew unlink php@7.2 && brew link --force --overwrite php@5.6
 Vous pouvez contrôler à nouveau la version de PHP activée.
 
 <br>
+
 ### Apache PHP Setup - Part 1
 Retournons à notre fichier de configuration d'Apache :
 
@@ -316,6 +317,7 @@ Pointons maintenant notre navigateur vers ce fichier pour l'utiliser :
 > Il existe un bug actuellement pour la version PHP 5.6.38 et `phpinfo();`. Ne vous y attardez pas. Ça fonctionne tout de même. Vous pourrez le vérifier rapidement après l'installation du switch.
 
 <br>
+
 ### PHP Switcher Script : `sphp`
 L'avantage du switch est de simplifier le changement de version PHP car il prend aussi en charge le redémarrage d'Apache.
 
@@ -327,6 +329,7 @@ chmod +x /usr/local/bin/sphp
 ```
 
 <br>
+
 ### Contrôle de l'emplacement de l'installation
 Dans le terminal :
 
