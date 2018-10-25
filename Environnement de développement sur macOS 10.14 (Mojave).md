@@ -161,7 +161,11 @@ Une fois le fichier ouvert dans l'application, faites **cmd** + **F** pour faire
 
 Changez `AllowOverride None` par `AllowOverride All`.
 
-- Cherchez `Loadmodule`. Nous allons autoriser **mod_rewrite** qui est par défaut en commentaire avec le caractère **\#**. Il suffit pour cela de simplement supprimer ce caractère : `LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so`.
+- Cherchez `Loadmodule`. Nous allons autoriser **mod_rewrite** qui est par défaut en commentaire avec le caractère **\#**. Il suffit pour cela de simplement supprimer ce caractère : 
+
+```
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so`.
+```
 
 <br>
 
