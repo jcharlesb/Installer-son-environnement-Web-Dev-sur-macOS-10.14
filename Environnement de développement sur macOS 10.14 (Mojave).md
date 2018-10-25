@@ -123,8 +123,11 @@ Pour contrôler les **logs** d'erreur d'Apache :
 tail -f /usr/local/var/log/httpd/error_log
 ```
 
-> #### Commandes de contrôle d'Apache
-> ```
+<br>
+
+#### Commandes de contrôle d'Apache
+
+```
 sudo apachectl start
 sudo apachectl stop
 sudo apachectl -k restart
@@ -132,6 +135,7 @@ sudo apachectl -k restart
 >  **-k** force le redémarrage
 
 <br>
+
 ### Configuration d'Apache
 Il va falloir utiliser un éditeur de texte offrant la possibilité de faire une recherche dans le texte d'un document (TextEdit, Visual Studio Code, Atom, etc.).
 
