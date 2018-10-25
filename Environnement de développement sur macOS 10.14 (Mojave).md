@@ -3,7 +3,7 @@
 ([macOS 10.14 Mojave Apache Setup…](https://getgrav.org/blog/macos-sierra-apache-multiple-php-versions))
 
 ---
-## Installer _Command Line Tool_s d’Xcode (Apple IDE)
+## Installer _Command Line Tools_ d’Xcode (Apple IDE)
 
 Si **Xcode** n’est pas installé sur votre ordinateur, les *command line tools* ne le sont pas non plus. Ils seront nécessaire pour qu’**Homebrew** puisse installer votre futur environnement de développement.
 
@@ -16,11 +16,11 @@ xcode-select --install
 ```
 
 Lorsque cette fenêtre apparaît, choisissez **Installer**.
+
 ![image](images/Capture d’écran 2018-09-10 à 19.38.43.png)
 
 > L’opération peut durer plusieurs minutes…
-
-> Si **Xcode** est déjà installé vous devrez l'avoir déjà ouvert et avoir accepté la license. Si ce n'est pas le cas, un message apparaîtra après l'installation d'**Homebrew** pour le faire et pouvoir poursuivre.
+ Si **Xcode** est déjà installé vous devrez l'avoir déjà ouvert et avoir accepté la license. Si ce n'est pas le cas, un message apparaîtra après l'installation d'**Homebrew** pour le faire et pouvoir poursuivre.
 
 ---
 ## Installer l'installeur de paquets _Homebrew_
@@ -32,6 +32,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 
 Et suivez les instructions :
+
 ![image](images/Capture d’écran 2018-09-10 à 19.58.42.png)
 
 ```
@@ -62,7 +63,9 @@ brew doctor
 Si c'est nécessaire des instructions correctives vous seront indiquées.
 
 <br>
+
 ### Librairies macOS 10.14 (Mojave) requises
+
 L'auteur de ce pas-à-pas s'est rendu compte que des librairies complémentaires étaient nécessaires sous Mojave. Il nous propose de les installer  : 
 
 ```
@@ -93,6 +96,7 @@ sudo brew services start httpd
 
 #### Test de l'installation
  En cliquant sur ce lien : [http://localhost:8080](http://localhost:8080), votre navigateur doit afficher ce message : **"It works!"**
+
 ![image](images/it-works.png)
 
 En cas d'échec, vous pouvez vérifier si le serveur Apache fonctionne avec :
@@ -102,6 +106,7 @@ ps -aef | grep httpd
 ```
 
 Si Apache est actif, vous devriez voir des process ***httpd*** :
+
 ![image](images/Capture d’écran 2018-10-24 à 21.36.20.png)
 
 Redémarrez Apache :
@@ -137,6 +142,7 @@ open -e /usr/local/etc/httpd/httpd.conf
 ```
 
 Une fois le fichier ouvert dans l'application, faites **cmd** + **F** pour faire apparaître le champ de recherche.
+
 ![image](images/Capture d’écran 2018-10-24 à 22.05.05.png)
 
 - Cherchez : `Listen 8080` et remplacez le par : `Listen 80` ;
@@ -146,11 +152,13 @@ Une fois le fichier ouvert dans l'application, faites **cmd** + **F** pour faire
 > Pour éviter que les guillemets soient convertis et provoquent une erreur de syntaxe, nous les avons retirés car ils sont optionnels. Vous pouvez aussi les conserver en ne changeant que le texte à l’intérieur des guillemets.
 
 - Dans le même bloc `Directory`, vous trouverez les réglages `AllowOverride`.
+
 Changez `AllowOverride None` par `AllowOverride All`.
 
 - Cherchez `Loadmodule`. Nous allons autoriser **mod_rewrite** qui est par défaut en commentaire avec le caractère **\#**. Il suffit pour cela de simplement supprimer ce caractère : `LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so`.
 
 <br>
+
 ### User et Group
 Nous allons changer les autorisations par défaut d'Apache.
 
@@ -163,6 +171,7 @@ Group staff
 ```
 
 <br>
+
 ### Servername
 Apache apprécie d'avoir un nom de serveur, mais il est désactivé par défaut.
 
@@ -172,6 +181,7 @@ Apache apprécie d'avoir un nom de serveur, mais il est désactivé par défaut.
 - Enregistrez les changements apportés à **httpd.conf**
 
 <br>
+
 ### Dossier Sites
 Nous devons maintenant créer le dossier **Sites** à la racine de votre compte utilisateur (comme c'était le cas dans les versions antérieures d'OS X. D'ailleurs après sa création vous verrez ce dossier endosser une icône idoine, vestige de ce passé). 
 
@@ -192,6 +202,7 @@ sudo apachectl -k restart
 > Si vous avez un message d'erreur au redémarrage d'Apache cela peut venir des quotes (guillemets) au niveau de `DocumentRoot`et `Directory`. Retirez-les et redémarrez Apache.
 
  En cliquant sur ce lien : [http://localhost:80](http://localhost:80), votre navigateur doit afficher ce message : **"My User Web Root"** :
+
 ![image](images/sites-webroot.png)
 
 <br>
@@ -215,6 +226,7 @@ La version de PHP active est la dernière installée. Vous pouvez vous en assure
 ```
 php -v
 ```
+
 ![image](images/Capture d’écran 2018-10-25 à 10.58.10.png)
 
 Nous allons activer la version 5.6 :
@@ -294,6 +306,7 @@ Pointons maintenant notre navigateur vers ce fichier pour l'utiliser :
 [http://localhost/info.php](http://localhost/info.php).
 
 ![image](images/php-running-56.png)
+
 > Il existe un bug actuellement pour la version PHP 5.6.38 et `phpinfo();`. Ne vous y attardez pas. Ça fonctionne tout de même. Vous pourrez le vérifier rapidement après l'installation du switch.
 
 <br>
@@ -327,6 +340,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ```
 
 <br>
+
 ### Tester le switch des versions PHP
 Dans le terminal (sphp *version*):
 
@@ -357,6 +371,7 @@ sphp 7.2
 Pour vérifier le changement de version : [http://localhost/info.php](http://localhost/info.php).
 
 <br>
+
 ### Mettre à jour PHP et les packages Brew
 Mettre d'abord à jour Brew pour obtenir la liste des packages disponibles la plus récente :
 
@@ -372,6 +387,7 @@ brew upgrade
 > Pour mettre à jour chaque version de PHP, il faudra les switcher puis refaire l'update et l'upgrade
 
 <br>
+
 **Activer une version spécifique/récente de PHP :**
 
 - vérifier la version active de PHP
@@ -409,11 +425,13 @@ brew services start mariadb
 
 ### Interfaces de gestion de base de données
 #### Sequel Pro
+
 ![image](images/sequelpro.png)
 
 Télécharger [ici](http://www.sequelpro.com/)
 
 <br>
+
 #### phpMyAdmin
 ##### Quick Install
 - Télécharger [ici](https://www.phpmyadmin.net/support/)
@@ -427,6 +445,7 @@ Télécharger [ici](http://www.sequelpro.com/)
 - Instructions d'installation [ici](https://docs.phpmyadmin.net/en/latest/setup.html#installing-using-composer)
 
 <br>
+
 ### Configuration de MariaDB
 Il est conseillé de changer le mote de passe du serveur MySQL et de sécuriser son installation. La façon la plus simple est d'utiliser ce script :
 
