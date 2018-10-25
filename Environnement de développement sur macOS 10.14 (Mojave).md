@@ -18,7 +18,7 @@ xcode-select --install
 
 Lorsque cette fenêtre apparaît, choisissez **Installer**.
 
-![image](images/installer xcode.png)
+![image](images/installer_xcode.png)
 
 > L’opération peut durer plusieurs minutes…
 > Si **Xcode** est déjà installé vous devrez l'avoir déjà ouvert et avoir accepté la license. Si ce n'est pas le cas, un message apparaîtra après l'installation d'**Homebrew** pour le faire et pouvoir poursuivre.
