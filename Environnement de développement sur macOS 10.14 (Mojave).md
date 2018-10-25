@@ -3,6 +3,7 @@
 ([macOS 10.14 Mojave Apache Setup…](https://getgrav.org/blog/macos-sierra-apache-multiple-php-versions))
 
 ---
+
 ## Installer _Command Line Tools_ d’Xcode (Apple IDE)
 
 Si **Xcode** n’est pas installé sur votre ordinateur, les *command line tools* ne le sont pas non plus. Ils seront nécessaire pour qu’**Homebrew** puisse installer votre futur environnement de développement.
@@ -17,12 +18,13 @@ xcode-select --install
 
 Lorsque cette fenêtre apparaît, choisissez **Installer**.
 
-![image](images/Capture d’écran 2018-09-10 à 19.38.43.png)
+![image](images/installer xcode.png)
 
 > L’opération peut durer plusieurs minutes…
- Si **Xcode** est déjà installé vous devrez l'avoir déjà ouvert et avoir accepté la license. Si ce n'est pas le cas, un message apparaîtra après l'installation d'**Homebrew** pour le faire et pouvoir poursuivre.
+> Si **Xcode** est déjà installé vous devrez l'avoir déjà ouvert et avoir accepté la license. Si ce n'est pas le cas, un message apparaîtra après l'installation d'**Homebrew** pour le faire et pouvoir poursuivre.
 
 ---
+
 ## Installer l'installeur de paquets _Homebrew_
 
 Toujours dans le terminal, tapez :
