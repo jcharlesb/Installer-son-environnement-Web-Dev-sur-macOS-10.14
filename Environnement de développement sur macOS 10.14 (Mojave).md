@@ -35,7 +35,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 Et suivez les instructions :
 
-![image](images/Capture d’écran 2018-09-10 à 19.58.42.png)
+![image](images/homebrew_A.png)
 
 ```
 return
@@ -43,7 +43,7 @@ return
 
 Puis à l'invite, le mot de passe de votre compte administrateur.
 
-![image](images/Capture d’écran 2018-09-10 à 20.01.49.png)
+![image](images/homebrew_B.png)
 
 
 Une fois l’installation d’Homebrew terminé, vous pouvez vérifiez sa version en tapant : 
@@ -52,7 +52,7 @@ Une fois l’installation d’Homebrew terminé, vous pouvez vérifiez sa versio
 brew --version
 ```
 
-![image](images/Capture d’écran 2018-10-24 à 20.02.51.png)
+![image](images/homebrew_C.png)
 
 Pour vérifier que votre installation s’est bien déroulé, vous devez taper :
 
@@ -60,7 +60,7 @@ Pour vérifier que votre installation s’est bien déroulé, vous devez taper :
 brew doctor
 ```
 
-![image](images/Capture d’écran 2018-10-24 à 20.04.25.png)
+![image](images/homebrew_D.png)
 
 Si c'est nécessaire des instructions correctives vous seront indiquées.
 
@@ -109,7 +109,7 @@ ps -aef | grep httpd
 
 Si Apache est actif, vous devriez voir des process ***httpd*** :
 
-![image](images/Capture d’écran 2018-10-24 à 21.36.20.png)
+![image](images/install_apache_1.png)
 
 Redémarrez Apache :
 
@@ -145,7 +145,7 @@ open -e /usr/local/etc/httpd/httpd.conf
 
 Une fois le fichier ouvert dans l'application, faites **cmd** + **F** pour faire apparaître le champ de recherche.
 
-![image](images/Capture d’écran 2018-10-24 à 22.05.05.png)
+![image](images/install_apache_2.png)
 
 - Cherchez : `Listen 8080` et remplacez le par : `Listen 80` ;
 - Cherchez : `DocumentRoot` et remplacez : `DocumentRoot "/usr/local/var/www"` par : `DocumentRoot /Users/nom_utilisateur/Sites` ; **nom_utilisateur** est votre nom de compte utilisateur. 
@@ -229,7 +229,7 @@ La version de PHP active est la dernière installée. Vous pouvez vous en assure
 php -v
 ```
 
-![image](images/Capture d’écran 2018-10-25 à 10.58.10.png)
+![image](images/install_php_1.png)
 
 Nous allons activer la version 5.6 :
 
@@ -237,7 +237,7 @@ Nous allons activer la version 5.6 :
 brew unlink php@7.2 && brew link --force --overwrite php@5.6
 ```
 
-![image](images/Capture d’écran 2018-10-25 à 10.59.52.png)
+![image](images/install_php_2.png)
 
 Vous pouvez contrôler à nouveau la version de PHP activée.
 
@@ -263,7 +263,7 @@ LoadModule php5_module /usr/local/opt/php@5.6/lib/httpd/modules/libphp5.so
 #LoadModule php7_module /usr/local/opt/php@7.2/lib/httpd/modules/libphp7.so
 ```
 
-![image](images/Capture d’écran 2018-10-25 à 11.09.27.png)
+![image](images/install_php_3.png)
 
 - Cherchez `dir_module`:
 
@@ -421,7 +421,7 @@ puis :
 brew services start mariadb
 ```
 
-![image](images/Capture d’écran 2018-10-25 à 14.01.14.png)
+![image](images/install_mysql_1.png)
 
 <br>
 
@@ -439,9 +439,9 @@ Télécharger [ici](http://www.sequelpro.com/)
 - Télécharger [ici](https://www.phpmyadmin.net/support/)
 - Instructions d'installation [ici](https://docs.phpmyadmin.net/en/latest/setup.html#quick-install)
 
-![image](images/Capture d’écran 2018-10-25 à 14.39.46.png)
+![image](images/install_mysql_2.png)
 
-![image](images/Capture d’écran 2018-10-25 à 14.45.37.png)
+![image](images/install_mysql_3.png)
 
 ##### Composer
 - Instructions d'installation [ici](https://docs.phpmyadmin.net/en/latest/setup.html#installing-using-composer)
@@ -457,7 +457,7 @@ Il est conseillé de changer le mote de passe du serveur MySQL et de sécuriser 
 
 Une fois le script lancé, il vous ai demandé le password de l'utilisateur root de MySQL. Par défaut, il n'y en a pas donc votre choix doit être d'appuyer sur la touche `enter`. Ensuite, répondez simplement aux questions.
 
-![image](images/Capture d’écran 2018-10-25 à 15.10.56.png)
+![image](images/install_mysql_4.png)
 
 <br>
 
@@ -490,7 +490,7 @@ open -e /usr/local/etc/httpd/extra/httpd-vhosts.conf
 
 Remplacez les instructions :
 
-![image](images/Capture d’écran 2018-10-25 à 15.55.33.png)
+![image](images/virtual_hosts.png)
 
 Par :
 
